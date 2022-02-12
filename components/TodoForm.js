@@ -2,7 +2,7 @@ import { Button, TextField } from '@mui/material'
 import { useContext, useRef, useEffect } from 'react'
 import { db } from "../firebase"
 import { addDoc, collection, serverTimestamp, updateDoc, doc } from '@firebase/firestore'
-import { TodoContext } from '../pages/TodoContext'
+import { TodoContext } from '../contexts/TodoContext'
 const TodoForm = () => {
     const inputAreaRef = useRef()
     const { showAlert, todo, setTodo } = useContext(TodoContext)

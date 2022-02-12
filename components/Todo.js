@@ -4,7 +4,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import MoreVertIcon from '@mui/icons-material/MoreVert'; 
 import {deleteDoc, doc} from '@firebase/firestore'
 import {db} from '../firebase'
-import {TodoContext} from '../pages/TodoContext'
+import {TodoContext} from '../contexts/TodoContext'
 import {useContext} from 'react' 
 const Todo = ({id ,timestamp ,title ,detail }) => {
 

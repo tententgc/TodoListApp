@@ -2,7 +2,7 @@ import { Alert, Container, Snackbar } from "@mui/material"
 import TodoForm from "../components/TodoForm"
 import TodoList from "../components/TodoList"
 import { useState } from "react"
-import { TodoContext } from "./TodoContext";
+import { TodoContext } from "../contexts/TodoContext";
 export default function Home() {
   const [open, setOpen] = useState(false);
   const [alertType, setAlertType] = useState("success");
