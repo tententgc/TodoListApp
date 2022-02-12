@@ -8,7 +8,7 @@ import {TodoContext} from '../pages/TodoContext'
 import {useContext} from 'react' 
 const Todo = ({id ,timestamp ,title ,detail }) => {
 
-  const {showAlert} = useContext(TodoContext)
+  const {showAlert, setTodo} = useContext(TodoContext)
 
   const deleteTodo = async(id,e ) => {
     e.stopPropagation() 
@@ -17,7 +17,7 @@ const Todo = ({id ,timestamp ,title ,detail }) => {
     showAlert('error',`Todo with id ${id} is deleted successfully`)
   } 
   return (
-    <ListItem
+    <ListItem onClick={() => setTodo({id,title , detail , timestamp}) }
         sx={{mt : 3 , boxShadow : 3}}
         style={{backgroundColor : '#FAFAFA'}}
         secondaryAction={ 
