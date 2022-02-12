@@ -8,7 +8,7 @@ const TodoList = () => {
   useEffect(() => {
     const collectionRef = collection(db,"todos");
 
-    const q = query(collectionRef, orderBy("timestamp", "desc")); 
+    const q = query(collectionRef, orderBy("timestamp", "asc")); 
 
     const unsubscribe = onSnapshot(q, (querySnapshot ) => {
       setTodos(querySnapshot.docs.map(doc => ({...doc.data(), id: doc.id,

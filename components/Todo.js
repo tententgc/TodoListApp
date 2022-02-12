@@ -19,7 +19,7 @@ const Todo = ({id ,timestamp ,title ,detail }) => {
   return (
     <ListItem onClick={() => setTodo({id,title , detail , timestamp}) }
         sx={{mt : 3 , boxShadow : 3}}
-        style={{backgroundColor : '#FAFAFA'}}
+          style={{ backgroundColor: '#D6D6D6'}}
         secondaryAction={ 
             <> 
                 <IconButton onClick={e=> deleteTodo(id,e)}>

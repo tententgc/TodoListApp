@@ -22,10 +22,11 @@ export default function Home() {
   };
   return (
     <TodoContext.Provider value={{ showAlert, todo, setTodo}}>
-      <Container maxWidth="sm">
+      <Container maxWidth="sm"
+        style={{ backgroundColor: '#C1C1C1', paddingBottom:"40px"}}>
         <TodoForm />
         <Snackbar 
-        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
         open={open} autoHideDuration={6000} onClose={handleClose}>
           <Alert onClose={handleClose} severity={alertType} sx={{ width: '100%' }}>
             {alertMessage}

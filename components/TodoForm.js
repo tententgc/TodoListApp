@@ -1,4 +1,4 @@
-import { Button, TextField } from '@mui/material'
+import { Button, TextField, DateTimePicker } from '@mui/material'
 import { useContext, useRef, useEffect } from 'react'
 import { db } from "../firebase"
 import { addDoc, collection, serverTimestamp, updateDoc, doc } from '@firebase/firestore'
@@ -64,9 +64,11 @@ const TodoForm = () => {
             <TextField fullWidth label="detail" multiline maxRows={4}
                 value={todo.detail}
                 onChange={e => setTodo({ ...todo, detail: e.target.value })}
+                
             />
 
-            <Button onClick={onSubmit} variant="contained" sx={{ mt: 3 }}>{todo.
+            <Button onClick={onSubmit} variant="contained" sx={{ mt: 3 }}
+                style={{ backgroundColor: '#f5576c'}}>{todo.
             hasOwnProperty('timestamp')?'Update todo':'Add a new todo'}</Button>
         </div>
     )
