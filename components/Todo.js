@@ -6,26 +6,32 @@ import {deleteDoc, doc} from '@firebase/firestore'
 import {db} from '../firebase'
 import {TodoContext} from '../contexts/TodoContext'
 import {useContext} from 'react' 
+import {useRouter} from 'next/router'
 const Todo = ({id ,timestamp ,title ,detail }) => {
 
   const {showAlert, setTodo} = useContext(TodoContext)
-
+  const router = useRouter() ;
   const deleteTodo = async(id,e ) => {
     e.stopPropagation() 
     const docRef = doc(db,"todos",id) 
     await deleteDoc(docRef)
     showAlert('error',`Todo with id ${id} is deleted successfully`)
   } 
+
+  const seeMore = (id,e) => { 
+    e.stopPropagation() ;
+    router.push(`/todos/${id}`)
+  }
   return (
     <ListItem onClick={() => setTodo({id,title , detail , timestamp}) }
         sx={{mt : 3 , boxShadow : 3}}
-          style={{ backgroundColor: '#D6D6D6'}}
+          style={{ backgroundColor: '#FAFAFA'}}
         secondaryAction={ 
             <> 
                 <IconButton onClick={e=> deleteTodo(id,e)}>
                     <DeleteIcon />
                 </IconButton>
-                <IconButton>
+                <IconButton onClick={e => seeMore(id,e)}>
                     <MoreVertIcon />
                 </IconButton>
             </>

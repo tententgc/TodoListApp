@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <TodoContext.Provider value={{ showAlert, todo, setTodo}}>
       <Container maxWidth="sm"
-        style={{ backgroundColor: '#C1C1C1', paddingBottom:"40px"}}>
+        style={{ paddingBottom:"40px"}}>
         <TodoForm />
         <Snackbar 
         anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
